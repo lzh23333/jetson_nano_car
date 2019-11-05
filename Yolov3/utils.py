@@ -149,3 +149,8 @@ def rescale_boxes(boxes, current_dim, original_shape):
     boxes[:, 2] = ((boxes[:, 2] - pad_x // 2) / unpad_w) * orig_w
     boxes[:, 3] = ((boxes[:, 3] - pad_y // 2) / unpad_h) * orig_h
     return boxes
+
+
+def size(bbox):
+    # bbox: (x1, y1, x2, y2)
+    return (bbox[3]-bbox[1])*(bbox[2]-bbox[0])

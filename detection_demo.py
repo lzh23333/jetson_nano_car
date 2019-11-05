@@ -1,6 +1,5 @@
 import cv2
 from Yolov3.detector import detector
-import torch
 
 
 if __name__ == "__main__":
@@ -10,7 +9,7 @@ if __name__ == "__main__":
     while True:
         _, img = cap.read()
         detection = yolo.detect(img.copy())
-        font = cv2.FONT_HERSHEY_SIMPLEX
+        font = cv2.FONT_ITALIC
         for x1, y1, x2, y2, conf, cls_conf, cls_pred in detection:
             name = yolo.coco_names[str(int(cls_pred))]
             print(name)
